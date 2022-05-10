@@ -1,3 +1,11 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -9,7 +17,16 @@
 .square {
     width: 20px;
     height: 20px;
-    
+}
+
+.btn {
+    font-family: 'Roboto Mono', monospace;
+    padding: .75em;
+    border-radius: 5em;
+    border: 2px solid whitesmoke;
+    background-color: silver;
+    color: white;
+    cursor: pointer;
 }
 
 .snake {
@@ -18,4 +35,8 @@
 
 .apple {
     background: red;
+}
+
+.game-over {
+    display: none;
 }

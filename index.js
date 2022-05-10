@@ -3,6 +3,7 @@ const displayScore = document.querySelector(".display-score");
 const button = document.querySelector(".btn");
 const squares = [];
 const width = 10;
+const gameOver = document.querySelector(".game-over");
 let currentSnake = [2, 1, 0];
 let direction = 1;
 let appleIndex = 0;
@@ -21,6 +22,7 @@ function startGame() {
     score = 0;
     speed = 1000;
     timerId = setInterval(move, speed);
+    gameOver.style.display = "none";
 }
 
 
@@ -47,6 +49,7 @@ function move() {
         (squares[currentSnake[0] + direction]).classList.contains("snake") 
     )
      {
+        gameOver.style.display = "block"
         return clearInterval(timerId);
     }
 
@@ -72,8 +75,6 @@ function move() {
     
 }
 
-
-
 function generateApple() {
     do {
         appleIndex = Math.floor(Math.random() * 100);
@@ -82,11 +83,6 @@ function generateApple() {
 }
 
 generateApple();
-
-
-
-
-
 
 button.addEventListener("click", startGame);
 
